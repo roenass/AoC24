@@ -1,0 +1,16 @@
+#! /usr/bin/env ruby -an
+
+BEGIN{l=[]; r=[]}
+END {
+    sl = l.sort
+    sr = r.sort
+    dist=0
+    sl.each_with_index do | e, i |
+        dist = dist + (e-sr[i]).abs()
+    end
+    puts "Distance: #{dist}"
+}
+
+a = $_.chomp.split(/ +/)
+l.append(a[0].to_i)
+r.append(a[1].to_i)

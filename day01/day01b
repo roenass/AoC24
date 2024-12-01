@@ -1,0 +1,14 @@
+#! /usr/bin/env ruby -an
+
+BEGIN{l=[]; r=[]}
+END {
+    sim=0
+    l.each do | e |
+        sim = sim + e*r.count(e)
+    end
+    puts "Similarity: #{sim}"
+}
+
+a = $_.chomp.split(/ +/)
+l.append(a[0].to_i)
+r.append(a[1].to_i)
